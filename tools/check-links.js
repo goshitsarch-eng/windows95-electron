@@ -17,7 +17,8 @@ async function main() {
       if (!response.ok) {
         // If we're inside GitHub's release asset server, we just ran into AWS not allowing
         // HEAD requests, which is different from a 404.
-        if (!response.url.startsWith('https://github-production-release-asset')) {
+        if (!response.url.startsWith('https://github-production-release-asset') &&
+            !link.startsWith('https://github.com/user-attachments/')) {
           throw new Error (`HTTP Error Response: ${response.status} ${response.statusText}`)
         }
       }
