@@ -20,7 +20,7 @@ export function generateDirectoryListing(currentPath: string, files: string[]): 
         stats = fs.statSync(fullPath);
       } catch (error) {
         log(`FileServer: Failed to get stats for ${fullPath}: ${error}`);
-        stats = new fs.Stats();
+        stats = {} as fs.Stats;
       }
 
       return {

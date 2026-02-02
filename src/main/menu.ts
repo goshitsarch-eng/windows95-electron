@@ -64,8 +64,8 @@ async function createMenu({ isRunning } = { isRunning: false }) {
             }
           })(),
           click: function (_item, focusedWindow) {
-            if (focusedWindow) {
-              focusedWindow.webContents.toggleDevTools();
+            if (focusedWindow && 'webContents' in focusedWindow) {
+              (focusedWindow as BrowserWindow).webContents.toggleDevTools();
             }
           },
         },

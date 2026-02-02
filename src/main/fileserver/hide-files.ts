@@ -1,4 +1,3 @@
-import { Stats } from "fs";
 import { settings } from "../settings";
 import { FileEntry } from "./fileserver";
 

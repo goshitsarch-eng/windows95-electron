@@ -1,4 +1,4 @@
-import { protocol, net } from 'electron';
+import { protocol } from 'electron';
 import * as fs from 'fs';
 import * as path from 'path';
 import { generateDirectoryListing } from './page-directory-listing';

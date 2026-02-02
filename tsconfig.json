@@ -22,7 +22,7 @@
     "moduleResolution": "node",
     "pretty": true,
     "target": "es2023",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "typeRoots": [
       "./node_modules/@types"
     ],

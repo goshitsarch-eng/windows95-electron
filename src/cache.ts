@@ -18,7 +18,6 @@ export async function clearStorageData() {
 
   await session.defaultSession.clearStorageData({
     storages: [
-      "appcache",
       "cookies",
       "filesystem",
       "indexdb",
@@ -26,7 +25,8 @@ export async function clearStorageData() {
       "shadercache",
       "websql",
       "serviceworkers",
+      "cachestorage",
     ],
-    quotas: ["temporary", "persistent", "syncable"],
+    quotas: ["temporary"],
   });
 }
