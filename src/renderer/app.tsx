@@ -1,3 +1,5 @@
+import { createRoot } from "react-dom/client";
+
 export interface Win95Window extends Window {
   emulator: any;
   win95: {
@@ -18,9 +20,7 @@ export class App {
    * Initial setup call, loading Monaco and kicking off the React
    * render process.
    */
-  public async setup(): Promise<void | Element> {
-    const React = await import("react");
-    const { render } = await import("react-dom");
+  public async setup(): Promise<void> {
     const { Emulator } = await import("./emulator");
 
     const className = `${process.platform}`;
@@ -30,9 +30,11 @@ export class App {
       </div>
     );
 
-    const rendered = render(app, document.getElementById("app"));
-
-    return rendered;
+    const container = document.getElementById("app");
+    if (container) {
+      const root = createRoot(container);
+      root.render(app);
+    }
   }
 }
 
